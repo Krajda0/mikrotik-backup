@@ -12,7 +12,7 @@ RUN echo "$MIKROTIK_SSH_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && \
 
 # Configure cron
 RUN mkdir /etc/cron
-RUN echo "$CRON /bin/bash /mikrotik-backup/backup.sh" > /etc/cron/crontab
+RUN echo "${CRON} /bin/bash /mikrotik-backup/backup.sh" > /etc/cron/crontab
 
 # Init cron
 RUN crontab /etc/cron/crontab
